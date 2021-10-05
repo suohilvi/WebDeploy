@@ -31,7 +31,7 @@
 					
 
                 </form>
-				<?php echo"<div> Tässä php koodilla blästätty pätkä</div>?>
+				<?php echo"<div> Tässä php koodilla blästätty pätkä</div>"?>
             </div>
         </div>
     </div>
