@@ -60,7 +60,7 @@
                     // Send verification email
                     if($rowCount>0) {
                         $subject = "Jatka vaihtamaan salasanaasi!";
-                        $msg = 'Click on the activation link to verify your email. <br><a href="http://localhost/neilikka/kayttaja/password_change_form.php?token='.$token.'"> Klikkaa salasananvaihtoon</a>';
+                        $msg = 'Click on the activation link to verify your email. <br><a href="https://tommii.azurewebsites.net/neilikka/kayttaja//password_change_form.php?token='.$token.'"> Klikkaa salasananvaihtoon</a>';
                         $smtpUsername = "burneritarkoitus@gmail.com";
                         $smtpPassword = "Burneri1";
                         $emailFrom = "verifiointisivu@email.com";

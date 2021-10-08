@@ -103,7 +103,7 @@
                     // Send verification email
                     if($sqlQuery) {
                         $subject = "Please Verify Email Address!";
-                        $msg = 'Click on the activation link to verify your email. <br><a href="http://localhost/neilikka/kayttaja/user_verification.php?token='.$token.'"> Click here to verify email</a>';
+                        $msg = 'Click on the activation link to verify your email. <br><a href="https://tommii.azurewebsites.net/neilikka/kayttaja/user_verification.php?token='.$token.'"> Click here to verify email</a>';
                         $smtpUsername = "burneritarkoitus@gmail.com";
                         $smtpPassword = "Burneri1";
                         $emailFrom = "verifiointisivu@email.com";
