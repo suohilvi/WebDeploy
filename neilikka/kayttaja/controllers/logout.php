@@ -15,5 +15,5 @@
 
     session_destroy();
 
-    header("Location: ../kirjaudu.php")
+    header("Location: ../../kirjaudu.php")
 ;?>
