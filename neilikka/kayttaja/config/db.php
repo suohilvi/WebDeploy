@@ -8,10 +8,7 @@
         session_start();
     }
     
-    $hostname = "127.0.0.1:51743";
-    $username = "azure";
-    $password = "6#vWHD_$";
-    $dbname = "asiakkaat";
+    include('../../login.php');
     
     $connection = new mysqli($hostname, $username, $password, $dbname) or die("Database connection not established.".$connection->connect_error)
 ?>
