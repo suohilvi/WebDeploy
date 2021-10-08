@@ -1,7 +1,7 @@
 <?php
     // Database connection
     include('./config/db.php');
-
+    include('D:/home/site/login.php');
     global $email_verified, $email_already_verified, $activation_error;
 
     // GET the token = ?token

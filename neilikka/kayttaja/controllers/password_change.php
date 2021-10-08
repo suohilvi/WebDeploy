@@ -2,7 +2,7 @@
    
     // Database connection
     include('config/db.php');
-
+    include('D:/home/site/login.php');
     // Error & success messages
     global $success_msg, $email__notfound, $mobile__notfound, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr;
     global $fNameEmptyErr, $lNameEmptyErr, $emailEmptyErr, $mobileEmptyErr, $passwordEmptyErr, $email_verify_err, $email_verify_success;

@@ -8,7 +8,7 @@
         session_start();
     }
     
-    include('../../login.php');
+    include('D:/home/site/login.php');
     
     $connection = new mysqli($hostname, $username, $password, $dbname) or die("Database connection not established.".$connection->connect_error)
 ?>
