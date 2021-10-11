@@ -1,0 +1,6 @@
+#viewport {
+    margin-top: 20px;
+    margin-left: 25vw;
+    width: 50vw;
+    height: calc(50vw/(16/9));
+}
