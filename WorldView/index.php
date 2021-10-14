@@ -27,7 +27,7 @@
 			<div id="preview">
 				<div id="viewport">
 						<a-scene id="sky-box" embedded>
-							<a-sky id="skyImage" src="https://i.ibb.co/t2tmgP3/SAMSUNG.jpg"
+							<a-sky id="skyImage" src="images/1.jpg"
 							animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade-out"
 							animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: fade-in"></a-sky>
 							<a-entity id="cam" camera="zoom: 0.8" look-controls >
