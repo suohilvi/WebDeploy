@@ -72,7 +72,7 @@
             }
 
         } else {
-            setcookie("neilikkamail", "", time()-3600, '/'); setcookie("neilikkapass", "", time()-3600, '/');
+            setcookie("neilikkamail", "", time()-3600, '/'); setcookie("neilikkapass", "", time()-3600, '/', NULL, NULL, TRUE);
             header("Location: ./kirjaudu.php");
         }
 
