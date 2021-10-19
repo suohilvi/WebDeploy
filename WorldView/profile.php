@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-
+<?php include "./userProjects/projectProfile.php";?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>WorldView360</title>
+	<title>Profile - WorldView360</title>
 	<meta name="Tommi Ijäs" content="360 sphere image viewing service">
     <!--Boostrap 5 associated styles-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,10 +16,18 @@
 </head>
 
 <body>
-<?php
+	<?php
+	/* Suojattujen sivujen alkuun */
 	ob_start();
 	if (!session_id()) session_start();
-?>
+	// Check if the user is logged in, if not then redirect him to login page
+	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== 1){
+		$_SESSION['next_page'] = $_SERVER['PHP_SELF']; 
+		header("location: ./userManagement/login.php");
+		exit;
+	}
+	?>
+
 	<div class="page-grid">
 
 		<div class="grid-item header">
@@ -29,35 +37,39 @@
 		<div class="grid-item grid-main">
 			<div id="preview">
 				<?php include "./viewport.php";?>
-				<p id="inputText">Input a link to view image:</p>
-				<div id="inputForm" class="input-group mb-3">
-					<input type="text" name="linkTest" id="linkTest" class="form-control" placeholder="Image URL" aria-label="Image URL" aria-describedby="basic-addon2">
-					<div class="input-group-append">
-						<button class="btn btn-outline-secondary" type="button" id="send" onclick="changeSrc('linkTest')">Send</button>
-					</div>
-				</div>
 			</div>
 		</div>
 
 		<div class="grid-item grid-info1">
-			<div class="infotext">
-				<p class="info">Welcome to WorldView360 service, where you can view the wonderful equirectangular 360 images of your choosing.</p>
-				<p class="info">Before committing to the service, you can test out the viewer featured on the left by providing a direct link to the image of your choosing.
-								Links with direct access to the image, bypassing any site inherent viewers are supported.</p>
-				<p class="info">Drag on image to turn around<br>Go to fullscreen or VR headset mode with the [VR] button<br>Press escape ESC or back to quit fullscreen mode</p>
-				<p class="info">More to come in near future.</p>
-				
-			</div>	
+			<div class="infotext">	
+				<?php
+				echo $linkAlert;
+				?>
+			</div>
+			<div id="imageLinks">
+				<?php
+					if(isset($oldLinks)) echo $oldLinks;
+				?>
+			</div>
 		</div>
 
 		<div class="grid-item grid-info2">
+
 			<div class="infotext">	
-			<p class="info">Viewer powered by A-frame framework. ImgBB service recommended for image link hosting</p>			
-			</div>		
+			<div class="alert alert-success" role="alert">Choose project:</div>
+			</div>
+
+			<div id="projects">
+				<form id="projectsForm" action="" method="get">
+				<?php
+				if(isset($oldProjects)) echo $oldProjects;
+				?>
+				</form>
+			</div>
 		</div>
 
 		<div class="grid-item footer">
-			<p>Tommi Ijäs - 2021</p>
+			<?php include "./footer.html";?>
 		</div>
 	</div>
 
