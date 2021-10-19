@@ -121,7 +121,7 @@
                     // Send verification email VAIHDA TÄMÄ https://tommii.azurewebsites.net/WorldView/userManagement/user_verification.php
                     if($sqlQuery) {
                         $subject = "Please Verify Email Address!";
-                        $msg = 'Click on the activation link to verify your email. <br><a href="http://localhost/WebDeploy/WorldView/userManagement/user_verification.php?token='.$token.'"> Click here to verify email</a>';
+                        $msg = 'Click on the activation link to verify your email. <br><a href="https://tommii.azurewebsites.net/WorldView/userManagement/user_verification.php?token='.$token.'"> Click here to verify email</a>';
                         $emailFrom = "WorldView@email.com";
                         $emailFromName = "Polaris";
                         $emailToName = $firstname . ' ' . $lastname;
