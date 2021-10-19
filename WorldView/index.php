@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>WorldView</title>
+	<title>WorldView360</title>
 	<meta name="Tommi Ijäs" content="360 sphere image viewing service">
     <!--Boostrap 5 associated styles-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -16,37 +16,32 @@
 </head>
 
 <body>
-
+<?php
+	ob_start();
+	if (!session_id()) session_start();
+?>
 	<div class="page-grid">
 
 		<div class="grid-item header">
-			<?php include "./nav.html";?>
+			<?php include "./nav.php";?>
 		</div>
 
 		<div class="grid-item grid-main">
 			<div id="preview">
-				<div id="viewport">
-						<a-scene id="sky-box" embedded>
-							<a-sky id="skyImage" src="https://i.ibb.co/t2tmgP3/SAMSUNG.jpg"
-							animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade-out"
-							animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: fade-in"></a-sky>
-							<a-entity id="cam" camera="zoom: 0.8" look-controls >
-								<a-cursor
-								id="cursor"
-								geometry="primitive: circle; radius: 0.000"
-								material="color: black; shader: flat"
-								></a-cursor>
-							</a-entity>
-						</a-scene>
-					<br>
+				<?php include "./viewport.php";?>
+				<p id="inputText">Input a link to view image:</p>
+				<div id="inputForm" class="input-group mb-3">
+					<input type="text" name="linkTest" id="linkTest" class="form-control" placeholder="Image URL" aria-label="Image URL" aria-describedby="basic-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="send" onclick="changeSrc('linkTest')">Send</button>
+					</div>
 				</div>
-				<p id="input">Input a link to image for view: <br><input type="text" name="link" id="linkInput"><input type="button" name="ok" id="ok" onclick="changeSrc()" value="send"></p>
 			</div>
 		</div>
 
 		<div class="grid-item grid-info1">
-			<div id="infotext">
-				<p class="info">Welcome to WorldView service, where you can view the wonderful equinorectangular 360 images from around the world.</p>
+			<div class="infotext">
+				<p class="info">Welcome to WorldView360 service, where you can view the wonderful equirectangular 360 images of your choosing.</p>
 				<p class="info">Before committing to the service, you can test out the viewer featured on the left by providing a direct link to the image of your choosing.
 								Links with direct access to the image, bypassing any site inherent viewers are supported.</p>
 				<p class="info">Drag on image to turn around<br>Go to fullscreen or VR headset mode with the [VR] button<br>Press escape ESC or back to quit fullscreen mode</p>
@@ -56,7 +51,7 @@
 		</div>
 
 		<div class="grid-item grid-info2">
-			<div id="infotext">	
+			<div class="infotext">	
 			<p class="info">Viewer powered by A-frame framework. ImgBB service recommended for image link hosting</p>			
 			</div>		
 		</div>

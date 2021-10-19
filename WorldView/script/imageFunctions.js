@@ -1,4 +1,4 @@
-function changeSrc() {
+function changeSrc(id) {
   var scene = document.querySelector('a-scene');
   if (scene.hasLoaded) {
     run();
@@ -14,10 +14,11 @@ function changeSrc() {
     sky.emit('fade-in');
     }
     img.onerror = function(){
-      document.getElementById('linkInput').value = "Error: Could not load image!"
+      document.getElementById(id).value = "Error: Could not load image, please check URL!"
+      sky.setAttribute('src', "images/LoadError.jpg");
       sky.emit('fade-in');
     }
-    img.src = document.getElementById('linkInput').value;
+    img.src = document.getElementById(id).value;
   }
 }
 
