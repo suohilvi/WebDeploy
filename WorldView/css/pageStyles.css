@@ -115,6 +115,9 @@ body{
     width: 90vw;
     height: calc(90vw/(16/9));
 }
+.a-enter-ar-button{
+    margin-left: 20px;
+}
 
 /*Design*/
 #linkForm, #projectForm{
