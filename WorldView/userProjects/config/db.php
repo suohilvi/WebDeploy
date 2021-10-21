@@ -8,7 +8,6 @@
         session_start();
     }
     
-
     include('../../credentials.php');
     $connection = new mysqli($hostname, $username, $password, 'worldview') or die("Database connection not established.".$connection->connect_error)
 
