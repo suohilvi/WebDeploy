@@ -50,7 +50,7 @@ function zoom(event){
     AFRAME.scenes[0].resize();
 }
 function add(){
-  if(isTouchDevice){return;};
+  if("ontouchstart" in document.documentElement){return;};
   document.getElementsByTagName("BODY")[0].classList.add('fixed');
 };
 function remove(){
