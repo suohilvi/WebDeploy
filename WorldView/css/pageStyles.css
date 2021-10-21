@@ -115,8 +115,9 @@ body{
     width: 90vw;
     height: calc(90vw/(16/9));
 }
-.a-enter-ar{
-    margin-left: 20px;
+.a-enter-vr-button {
+    margin-right:10px;
+    margin-bottom: 35px;
 }
 
 /*Design*/
