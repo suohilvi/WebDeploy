@@ -15,13 +15,13 @@
 	<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 </head>
 
-<body>
+<body onload="changeSrc('hidden')">
+<input type="hidden" id="hidden" value="images/1.jpg">
 <?php
 	ob_start();
 	if (!session_id()) session_start();
 ?>
 	<div class="page-grid">
-
 		<div class="grid-item header">
 			<?php include "./nav.php";?>
 		</div>
@@ -44,20 +44,20 @@
 				<p class="info">Welcome to WorldView360 service, where you can view the wonderful equirectangular 360 images of your choosing.</p>
 				<p class="info">Before committing to the service, you can test out the viewer featured on the left by providing a direct link to the image of your choosing.
 								Links with direct access to the image, bypassing any site inherent viewers are supported.</p>
-				<p class="info">Drag on image to turn around<br>Go to fullscreen or VR headset mode with the [VR] button<br>Press escape ESC or back to quit fullscreen mode</p>
-				<p class="info">More to come in near future.</p>
-				
+				<p class="info">Drag on image to turn around<br>Go to fullscreen or VR headset mode with the [VR] button<br>Use scroll wheel to zoom<br>Press escape ESC or back to quit fullscreen mode</p>
 			</div>	
 		</div>
 
 		<div class="grid-item grid-info2">
 			<div class="infotext">	
-			<p class="info">Viewer powered by A-frame framework. ImgBB service recommended for image link hosting</p>			
+			<p class="info">Viewer powered by A-frame framework. ImgBB service recommended for image link hosting</p>	
+			<p class="info">ImgBB service recommended for image link hosting</p>
+			<p class="info">Google streeview app can be used to produce high quality equitriangular images</p>	
 			</div>		
 		</div>
 
 		<div class="grid-item footer">
-			<p>Tommi Ijäs - 2021</p>
+			<?php include "./footer.html";?>
 		</div>
 	</div>
 

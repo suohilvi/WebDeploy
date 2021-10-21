@@ -15,7 +15,31 @@
     box-shadow: 0 0 5px 1px var(--lightBlue);
 }
 
+/*Footer customization*/
+#footer-flex{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+#feedback-link{
+    color: black;
+    text-decoration: none;
+}
+.box{
+    margin: 10px 20px 0px 20px;
+}
+#creds{
+    margin-top: 5px;
+}
+.box h4{
+    margin: 0;
+}
 /*Basic page layout with grid used in each pages*/
+.fixed{
+    position: fixed;
+    width: 100%;
+}
 body{
     background-color: var(--lightBlue);
     font-size: 1.2rem;

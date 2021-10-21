@@ -1,6 +1,6 @@
 <?php
 include('./userProjects/config/db.php');
-$userTable = $_SESSION['dbtable'];
+isset($_SESSION['dbtable']) ? $userTable = $_SESSION['dbtable'] : header("Location: ../index.php");
 
 //Link Alerts
 if(isset($_GET['project'])) {$linkAlert = '<div class="alert alert-success" role="alert">Choose an image to view from: '.strip_tags($_GET['project']).'</div>';}

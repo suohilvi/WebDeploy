@@ -1,13 +1,12 @@
 <?php
 include('./userProjects/config/db.php');
-$userTable = $_SESSION['dbtable'];
+isset($_SESSION['dbtable']) ? $userTable = $_SESSION['dbtable'] : header("Location: ../index.php");
 
 //Link Alerts
 $save ="Save image links to current project: ";
 if(isset($_GET['project'])) {$linkAlert = '<div class="alert alert-success" role="alert">'.$save.strip_tags($_GET['project']).'</div>';}
 if(isset($_GET['newProject'])) {$linkAlert = '<div class="alert alert-success" role="alert">'.$save.strip_tags($_GET['newProject']).'</div>';}
 if(!isset($_GET['project']) && !isset($_GET['newProject'])){$linkAlert = '<div class="alert alert-warning" role="alert">Please add or choose a project to modifie links!</div>';}
-
 
 
 //Check projects and make them available

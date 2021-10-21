@@ -22,20 +22,31 @@ function changeSrc(id) {
   }
 }
 
-/*
-window.addEventListener("wheel", event => {
-  const delta = Math.sign(event.wheelDelta);
-  //getting the mouse wheel change (120 or -120 and normalizing it to 1 or -1)
-  var mycam=document.getElementById('cam').getAttribute('camera');
-  var finalZoom=document.getElementById('cam').getAttribute('camera').zoom+delta;
-  //limiting the zoom so it doesnt zoom too much in or out
-  if(finalZoom<1)
-    finalZoom=1;
-  if(finalZoom>5)
-    finalZoom=5;  
+function wheelZoom(){
+  window.addEventListener("wheel", zoom, true);
+};
+function wheelScroll(){
+  window.removeEventListener("wheel", zoom, true);
+}
+function zoom(event){
+  
+    // small increments for smoother zooming
+    const delta = event.wheelDelta / 120 / 10;
+    var mycam = document.getElementById("cam").getAttribute("camera");
+    var finalZoom =
+      document.getElementById("cam").getAttribute("camera").zoom + delta;
 
-  mycam.zoom=finalZoom;
-  //setting the camera element
-  document.getElementById('cam').setAttribute('camera',mycam);
-});
-*/
+    // limiting the zoom
+    if (finalZoom < 0.8) finalZoom = 0.8;
+    if (finalZoom > 2) finalZoom = 2;
+    mycam.zoom = finalZoom;
+
+    document.getElementById("cam").setAttribute("camera", mycam);
+    AFRAME.scenes[0].resize();
+}
+function add(){
+  document.getElementsByTagName("BODY")[0].classList.add('fixed');
+};
+function remove(){
+  document.getElementsByTagName("BODY")[0].classList.remove('fixed');
+};

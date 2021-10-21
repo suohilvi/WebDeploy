@@ -122,8 +122,8 @@
                     if($sqlQuery) {
                         $subject = "Please Verify Email Address!";
                         $msg = 'Click on the activation link to verify your email. <br><a href="http://localhost/WebDeploy/WorldView/userManagement/user_verification.php?token='.$token.'"> Click here to verify email</a>';
-                        $emailFrom = "WorldView@email.com";
-                        $emailFromName = "Polaris";
+                        $emailFrom = "WorldView360@email.com";
+                        $emailFromName = "WorldView360";
                         $emailToName = $firstname . ' ' . $lastname;
                         $mail = new PHPMailer;
                         $mail->isSMTP(); 
