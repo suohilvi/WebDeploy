@@ -60,7 +60,7 @@
                     /// Send verification email VAIHDA TÄMÄ https://tommii.azurewebsites.net/WorldView/userManagement/password_change_form.php
                     if($rowCount>0) {
                         $subject = "Please continue to change your WorldView360 password!";
-                        $msg = 'Click on the activation link to verify your email. <br><a href="http://localhost/WebDeploy/WorldView/userManagement/password_change_form.php?token='.$token.'"> Click to change password</a>';
+                        $msg = 'Click on the activation link to verify your email. <br><a href="https://tommii.azurewebsites.net/WorldView/userManagement/password_change_form.php?token='.$token.'"> Click to change password</a>';
                         $emailFrom = "WorldViewVerification@email.com";
                         $emailFromName = "VerificationDesk";
                         $emailToName = "Change request";

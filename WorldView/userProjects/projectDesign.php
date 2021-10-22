@@ -41,8 +41,9 @@ if(isset($_GET['project'])) {
         while($row = $links->fetch_assoc()){
             $oldLinks .= '
                         <form action="" method="post">
-                        <div id="inputForm" class="input-group mb-3">
-                            <input type="text" name="linkTest" id="'.$row['id'].'" class="linkField form-control" value="'.$row['link'].'" aria-label="Image URL" aria-describedby="basic-addon2" readonly>
+                        <div class="inputForm input-group mb-3">
+                            <input type="text" name="linkTest" id="'.$row['id'].'title" class="linkField form-control" value="'.$row['title'].'" aria-label="Image URL" aria-describedby="basic-addon2" readonly>
+                            <input type="text" name="linkTest" id="'.$row['id'].'link" class="linkField form-control" value="'.$row['link'].'" aria-label="Image URL" aria-describedby="basic-addon2" readonly>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-danger" type="button" name="modify" onclick="modifyLink('.$row['id'].')">Modify</button>
                             </div>
@@ -54,12 +55,13 @@ if(isset($_GET['project'])) {
 }
 //Add links to project
 if(isset($_POST['addLink'])) {
+    $title = $connection->real_escape_string(strip_tags($_POST['titleInput']));
     $link = $connection->real_escape_string(strip_tags($_POST['linkInput']));
     $project = $_SESSION['project'];
     if(filter_var($link, FILTER_VALIDATE_URL)){
-    $projectSql = "INSERT INTO $userTable (link, project, projectposition) VALUES(?, ?, '0')";
+    $projectSql = "INSERT INTO $userTable (title, link, project, projectposition) VALUES(?, ?, ?, '0')";
     $statement = $connection->prepare($projectSql);
-    $statement->bind_param("ss", $link, $project);
+    $statement->bind_param("sss", $title, $link, $project);
     $statement->execute();
     header("Location: ?project=$project");
     }else{$linkAlert = '<div class="alert alert-warning" role="alert">Not usable URL!</div>';}
@@ -76,11 +78,12 @@ if(isset($_POST['delete'])) {
 }
 if(isset($_POST['save'])) {
     $project = $_SESSION['project'];
+    $title = $connection->real_escape_string(strip_tags($_POST['titleInput']));
     $link= $connection->real_escape_string(strip_tags($_POST['linkInput']));
     $id = $connection->real_escape_string(strip_tags($_POST['id']));
-    $modifySql = "UPDATE $userTable SET link = ? WHERE id = ?";
+    $modifySql = "UPDATE $userTable SET title = ?, link = ? WHERE id = ?";
     $statement = $connection->prepare($modifySql);
-    $statement->bind_param("si", $link, $id);
+    $statement->bind_param("ssi",$title, $link, $id);
     $statement->execute();
     header("Location: ?project=$project");
 }

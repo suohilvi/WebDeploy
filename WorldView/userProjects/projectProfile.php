@@ -40,7 +40,8 @@ if(isset($_GET['project'])) {
         while($row = $links->fetch_assoc()){
             $oldLinks .= '
                         <form action="" method="post">
-                        <div id="inputForm" class="input-group mb-3">
+                        <div class="inputForm input-group mb-3">
+                            <input type="text" name="linkTest" id="title-name" class="linkField form-control" value="'.$row['title'].'" aria-label="Image URL" aria-describedby="basic-addon2" readonly>
                             <input type="text" name="linkTest" id="'.$row['id'].'" class="linkField form-control" value="'.$row['link'].'" aria-label="Image URL" aria-describedby="basic-addon2" readonly>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="button" name="modify" onclick="changeSrc('.$row['id'].')")">View</button>
