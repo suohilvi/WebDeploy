@@ -42,7 +42,7 @@
 			<div id="preview">
 				<?php include "./viewport.php";?>
 				<p id="inputText">Test your link before saving:</p>
-				<div id="inputForm" class="input-group mb-3">
+				<div class="inputForm input-group mb-3">
 					<input type="text" name="linkTest" id="linkTest" class="linkField form-control" placeholder="Test image URL" aria-label="Image URL" aria-describedby="basic-addon2">
 					<div class="input-group-append">
 						<button class="btn btn-outline-secondary" type="button" id="send" onclick="changeSrc('linkTest')">Test</button>
@@ -62,7 +62,10 @@
 			if(isset($_GET['project']) || isset($_GET['newProject'])){
 			echo'
 			<form action="" method="post">
-					<div id="linkForm" class="input-group mb-3">
+					<div class="linkForm add-link input-group mb-3">
+						<input type="text" id="title-input" name="titleInput" class="linkField form-control" placeholder="Add title to image" aria-label="Image URL" aria-describedby="basic-addon2">
+					</div>
+					<div class="linkForm add-link input-group mb-3">
 						<input type="text" name="linkInput" class="linkField form-control" placeholder="Add new image link" aria-label="Image URL" aria-describedby="basic-addon2">
 						<div class="input-group-append">
 							<button class="btn btn-outline-secondary" type="submit" name="addLink" id="send">Add</button>
@@ -123,6 +126,7 @@
 					<input type="submit" name="save" id="submit" class="btn btn-outline-secondary hidden-submit">
                     <h3>Modify link</h3>
                     <div class="form-group">
+						<input type="text" name="titleInput" id="title-change" class="linkField form-control" value="Your new title" aria-label="Image URL" aria-describedby="basic-addon2">
 						<input type="text" name="linkInput" id="link-change" class="linkField form-control" value="Change the link for good this time" aria-label="Image URL" aria-describedby="basic-addon2">
 						<input type="hidden" name="id" id="link-change-id" value="">
 					</div>

@@ -1,8 +1,9 @@
 /*Navbar customization*/
 :root {
-    --lightBlue: rgba(170, 209, 235, 0.3);
+    --lightBlue: rgb(191, 224, 246);
     --button: rgb(130, 240, 140);
-    --buttonHover: rgb(91, 180, 97)
+    --buttonHover: rgb(91, 180, 97);
+    --background: rgb(129, 202, 172);
 }
 .navbar{
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
@@ -27,7 +28,7 @@
     text-decoration: none;
 }
 .box{
-    margin: 10px 20px 0px 20px;
+    margin: 10px 20px 10px 20px;
 }
 #creds{
     margin-top: 5px;
@@ -41,7 +42,7 @@
     width: 100%;
 }
 body{
-    background-color: var(--lightBlue);
+    background-color: var(--background);
     font-size: 1.2rem;
 }
 .grid-item {
@@ -60,7 +61,7 @@ body{
 .footer{
     grid-column: 1 / 3;
     grid-row: 4 / 5;
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: var(--background);
 }
 .grid-main {
     grid-column: 1 / 3;
@@ -86,7 +87,7 @@ body{
     margin-top: 10px;
     font-size: 150%;
 }
-#inputForm{
+.inputForm{
     padding:0 50px 0 50px;
 }
 .btn-outline-secondary{
@@ -122,8 +123,8 @@ body{
     margin-right: 10px;
 }
 
-/*Design*/
-#linkForm, #projectForm{
+/*Design and profile*/
+.linkForm, #projectForm{
     padding:0 10px 0 10px;
 }
 #projectsForm{
@@ -183,7 +184,14 @@ body{
     padding: 0;
     position: absolute;
     width: 1px;
-  }
+}
+#title-input {
+    margin-bottom:-15px !important;
+}
+#title-name {
+    font-weight: bold;
+}
+
 /*Layout properties used for "high" pixel-count wide-screen monitors*/
 @media only screen and (min-width: 768px) and (min-aspect-ratio: 1/1) {
     .page-grid {

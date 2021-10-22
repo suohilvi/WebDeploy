@@ -30,7 +30,7 @@
 			<div id="preview">
 				<?php include "./viewport.php";?>
 				<p id="inputText">Input a link to view image:</p>
-				<div id="inputForm" class="input-group mb-3">
+				<div class="inputForm input-group mb-3">
 					<input type="text" name="linkTest" id="linkTest" class="form-control" placeholder="Image URL" aria-label="Image URL" aria-describedby="basic-addon2">
 					<div class="input-group-append">
 						<button class="btn btn-outline-secondary" type="button" id="send" onclick="changeSrc('linkTest')">Send</button>
@@ -45,6 +45,8 @@
 				<p class="info">Before committing to the service, you can test out the viewer featured on the left by providing a direct link to the image of your choosing.
 								Links with direct access to the image, bypassing any site inherent viewers are supported.</p>
 				<p class="info">Drag on image to turn around<br>Go to fullscreen or VR headset mode with the [VR] button<br>Use scroll wheel to zoom<br>Press escape ESC or back to quit fullscreen mode</p>
+				<p class="info"><br>On phone look around by either with gyroscope or by touch and drag<br>Go to fullscreen with AR button or use headset mode with the [VR] button<br>Press system back button to exit fullscreen<br>Sorry no zoom on mobile</p>
+
 			</div>	
 		</div>
 

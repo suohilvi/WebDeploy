@@ -107,7 +107,8 @@
                     $name="cust".$idRow['id'];
                     $tableQuery= "CREATE TABLE $name (
                                 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-                                link VARCHAR(300) NOT NULL,
+                                title VARCHAR(300) NOT NULL,
+                                link VARCHAR(2000) NOT NULL,
                                 project VARCHAR(50) DEFAULT 'Project 1',
                                 projectposition VARCHAR(100)
                                 )";
@@ -122,7 +123,7 @@
                     if($sqlQuery) {
                         $subject = "Please Verify Email Address!";
                         $msg = 'Click on the activation link to verify your email. <br><a href="https://tommii.azurewebsites.net/WorldView/userManagement/user_verification.php?token='.$token.'"> Click here to verify email</a>';
-                        $emailFrom = "WorldView@email.com";
+                        $emailFrom = "WorldView360@email.com";
                         $emailFromName = "WorldView360";
                         $emailToName = $firstname . ' ' . $lastname;
                         $mail = new PHPMailer;
