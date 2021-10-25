@@ -15,8 +15,7 @@
 	<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 </head>
 
-<body onload="changeSrc('hidden')">
-<input type="hidden" id="hidden" value="images/1.jpg">
+<body onload="changeSrc('hidden'), active()">
 <?php
 	ob_start();
 	if (!session_id()) session_start();
@@ -63,7 +62,7 @@
 		</div>
 	</div>
 
-
+	<input type="hidden" id="hidden" value="images/1.jpg">
 	<!--Boostrap 5 script-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	<!--own js functions-->

@@ -43,7 +43,7 @@
 }
 body{
     background-color: var(--background);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .grid-item {
     background-color: var(--lightBlue);

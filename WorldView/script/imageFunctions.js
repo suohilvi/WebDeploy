@@ -56,3 +56,20 @@ function add(){
 function remove(){
   document.getElementsByTagName("BODY")[0].classList.remove('fixed');
 };
+
+function active() {
+  // Get the container element
+  var btnContainer = document.getElementById("nav");
+  
+  // Get all buttons with class="btn" inside the container
+  var links = btnContainer.getElementsByClassName("nav-link");
+  var url = window.location.href;
+  
+  // Loop through the buttons and add the active class to the current/clicked button
+  for (var i = 0; i < links.length; i++) {
+    var location = links[i].href;
+    if(url === location){
+      links[i].classList.add("active");
+    }else{links[i].classList.remove("active");}
+  }
+  };
