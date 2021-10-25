@@ -43,7 +43,7 @@
 }
 body{
     background-color: var(--background);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 .grid-item {
     background-color: var(--lightBlue);
@@ -193,7 +193,7 @@ body{
 }
 
 /*Layout properties used for "high" pixel-count wide-screen monitors*/
-@media only screen and (min-width: 768px) and (min-aspect-ratio: 1/1) {
+@media only screen and (min-width: 1081px) and (min-aspect-ratio: 1/1) {
     .page-grid {
         grid-template-rows: auto minmax(60vh, auto) minmax(30vh, auto) auto;
     }

@@ -15,7 +15,7 @@
 	<script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 </head>
 
-<body onload="changeSrc('hidden')">
+<body onload="changeSrc('hidden'), active()">
 <input type="hidden" id="hidden" value="images/choose.png">
 
 	<?php

@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul id="nav" class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        <a class="nav-link" aria-current="page" href="index.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="profile.php">Profile</a>
@@ -24,21 +24,7 @@
         ';
       }
       ?>
+    </ul>
   </div>
 </div>
 </nav>
-
-<script>
-// Get all buttons with class="btn" inside the container
-var container = document.getElementById("nav");
-var links = container.getElementsByClassName("nav-link");
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
