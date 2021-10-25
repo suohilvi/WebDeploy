@@ -21,7 +21,12 @@ function changeSrc(id) {
     img.src = document.getElementById(id).value;
   }
 }
-
+  const isTouchDevice = () => {
+  return (('ontouchstart' in window) ||
+    (navigator.maxTouchPoints > 0) ||
+    (navigator.msMaxTouchPoints > 0));
+}
+  
 function wheelZoom(){
   window.addEventListener("wheel", zoom, true);
 };
